@@ -12,7 +12,7 @@ namespace MauiApp1
 {
     public partial class MainPage : ContentPage
     {
-        private const string apiKey = "AIzaSyDEx_1CkPvk2krgvJDhP_OAgHL5c_Lutt0";
+        private const string apiKey = "your_api_key";
 
         FileResult currentPhoto;
         string currentFilePath;
