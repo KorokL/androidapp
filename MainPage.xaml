@@ -1,0 +1,77 @@
+﻿<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:gestures="clr-namespace:Microsoft.Maui.Controls;assembly=Microsoft.Maui.Controls"
+             x:Class="MauiApp1.MainPage">
+    <VerticalStackLayout>
+        <HorizontalStackLayout Margin="5">
+            <ImageButton
+                x:Name="PhotoDisplay" 
+                WidthRequest="195" 
+                HeightRequest="200"
+                Aspect="AspectFill"
+                HorizontalOptions="Start"
+                Clicked="TakePhoto" />
+
+            <Editor 
+                x:Name="InputTxt"
+                Placeholder="Enter your question"
+                WidthRequest="195"
+                HeightRequest="200"
+                HorizontalOptions="End"
+                VerticalOptions="Start" />
+        </HorizontalStackLayout>
+
+        <Button Text="Receive Answers" 
+                Clicked="AskGemini"
+                Margin="5" />
+
+        <Entry
+            x:Name="GeneratingText"
+            IsReadOnly="True"/>
+
+        <HorizontalStackLayout>
+            <Grid Margin="5">
+                <ScrollView WidthRequest="195" HeightRequest="200">
+                    <Editor
+                    IsReadOnly="True"
+                    x:Name="OutputTxt"/>
+                </ScrollView>
+
+                <BoxView
+                    x:Name="CoverBox"
+                    BackgroundColor="Gray"
+                    Opacity="1"
+                    WidthRequest="195"
+                    HeightRequest="200">
+
+                    <BoxView.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="OnCoverBoxTapped" />
+                    </BoxView.GestureRecognizers>
+
+                </BoxView>
+            </Grid>
+            
+            <Grid Margin="5">
+                <Editor
+                        x:Name="OutputTxt2"
+                        IsReadOnly="True"
+                        MaximumHeightRequest="200"
+                        WidthRequest="200"/>
+
+                <BoxView
+                    x:Name="CoverBox2"
+                    BackgroundColor="Gray"
+                    Opacity="1"
+                    WidthRequest="195"
+                    HeightRequest="200"
+                    >
+                    <BoxView.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="OnCoverBoxTapped2" />
+                    </BoxView.GestureRecognizers>
+                </BoxView>
+
+
+            </Grid>
+        </HorizontalStackLayout>
+    </VerticalStackLayout>
+</ContentPage>
